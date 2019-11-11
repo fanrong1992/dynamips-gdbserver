@@ -60,7 +60,7 @@ void ppc32_jit_tcb_exec(cpu_ppc_t *cpu,ppc32_jit_tcb_t *block)
       }
    }
 
-   asm volatile ("movl %0,%%edi"::"r"(cpu):
+   asm volatile ("movl $0,%%edi"::"r"(cpu):
                  "esi","edi","eax","ebx","ecx","edx");
    jit_code();
 }
